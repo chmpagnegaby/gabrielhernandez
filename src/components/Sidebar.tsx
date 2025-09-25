@@ -1,9 +1,10 @@
 import { Github, Linkedin, Twitter, Instagram, ExternalLink } from "lucide-react";
+import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 const navigation = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
+  { name: "About", href: "#about", id: "about" },
+  { name: "Experience", href: "#experience", id: "experience" },
+  { name: "Projects", href: "#projects", id: "projects" },
 ];
 
 const socialLinks = [
@@ -14,6 +15,8 @@ const socialLinks = [
 ];
 
 export function Sidebar() {
+  const activeSection = useScrollSpy(["about", "experience", "projects"]);
+
   return (
     <aside className="fixed left-0 top-0 z-40 h-screen w-80 bg-background border-r border-border flex flex-col">
       <div className="flex-1 flex flex-col justify-between p-8">
@@ -38,9 +41,20 @@ export function Sidebar() {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="nav-link block py-2 uppercase tracking-widest text-xs font-bold"
+                    className={`nav-link block py-2 uppercase tracking-widest text-xs font-bold transition-all duration-300 ${
+                      activeSection === item.id 
+                        ? "active text-accent" 
+                        : "text-muted-foreground hover:text-accent"
+                    }`}
                   >
-                    {item.name}
+                    <span className="relative">
+                      {item.name}
+                      <span 
+                        className={`absolute left-0 bottom-0 h-[2px] bg-accent transition-all duration-300 ${
+                          activeSection === item.id ? "w-full" : "w-0"
+                        }`}
+                      />
+                    </span>
                   </a>
                 </li>
               ))}

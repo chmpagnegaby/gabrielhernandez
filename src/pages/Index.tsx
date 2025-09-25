@@ -4,6 +4,7 @@ import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
 import { Writing } from "@/components/Writing";
+import { CursorGlow } from "@/components/CursorGlow";
 
 const Index = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-bg-dark">
+      <CursorGlow />
       <Sidebar />
       
       <main className="ml-80 min-h-screen">
