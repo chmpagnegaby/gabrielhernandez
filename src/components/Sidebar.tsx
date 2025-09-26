@@ -2,16 +2,16 @@ import { Github, Linkedin, Twitter, Instagram, ExternalLink } from "lucide-react
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 const navigation = [
-  { name: "About", href: "#about", id: "about" },
-  { name: "Experience", href: "#experience", id: "experience" },
-  { name: "Projects", href: "#projects", id: "projects" },
+  { name: "Sobre mi", href: "#about", id: "about" },
+  { name: "Mi experiencia", href: "#experience", id: "experience" },
+  { name: "Mis proyectos", href: "#projects", id: "projects" },
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Github, href: "https://github.com/chmpagnegaby", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/gabriel-hernandez-cardoso", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/GabrielHernandezCardoso", label: "X" },
+  { icon: Instagram, href: "https://instagram.com/gabriel.hdezzz", label: "Instagram" },
 ];
 
 export function Sidebar() {
@@ -23,14 +23,14 @@ export function Sidebar() {
         {/* Header */}
         <div>
           <div className="mb-4">
-            <h1 className="text-4xl font-bold text-foreground mb-2">
-              Brittany Chiang
+            <h1 className="text-2xl font-bold text-foreground mb-4">
+              Gabriel Hernández 
             </h1>
             <h2 className="text-xl font-medium text-accent mb-4">
-              Front End Engineer
+              Fullstack Engineer Junior
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              I build accessible, pixel-perfect digital experiences for the web.
+              Si hay imaginación, hay capacidad para crear.
             </p>
           </div>
 
