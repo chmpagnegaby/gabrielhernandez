@@ -5,7 +5,7 @@ const experiences = [
     period: "Marzo 2025 — Junio 2025",
     title: "Frontend Developer",
     company: "Filmer",
-    companyUrl: "https://filmer.com/",
+    companyUrl: "https://filmer.es/",
     description:
       "Formé parte del equipo de **Filmer**, una plataforma que conecta marcas con creadores UGC. Lideré el desarrollo frontend de páginas principales junto a un equipo multidisciplinar, aplicando buenas prácticas de UI/UX y rendimiento. Implementé **seguridad y autenticación** con **JWT + cookies** (rutas protegidas, validación de sesión) y colaboré en backend con **sockets** para chat en tiempo real y endpoints **PUT/DELETE/PATCH** para la gestión de datos.",
     technologies: ["React", "Astro", "Node.js", "PostgreSQL", "JWT", "WebSockets"],
@@ -14,7 +14,7 @@ const experiences = [
     period: "Junio 2025 — Actualidad",
     title: "Fullstack Developer",
     company: "Cooperativa Monesterio",
-    companyUrl: "https://cooperativamonesterio.com/",
+    companyUrl: "https://coopsanisidro.com/",
     description:
       "Diseño y desarrollo de una aplicación interna para **stock de almacén** y **RR. HH.** con **React, Node.js y PostgreSQL**, optimizando procesos, trazabilidad e informes.",
     technologies: ["React", "Node.js", "PostgreSQL"],
@@ -32,7 +32,7 @@ const experiences = [
     period: "2024 — 2025",
     title: "Software Developer",
     company: "Nutrieco",
-    companyUrl: "https://nutrieco.com/",
+    companyUrl: "https://nutrieco.es/",
     description:
       "Aplicación de **gestión veterinaria** capaz de generar productos a partir de datos preparados, integrables en plataformas ganaderas. Desarrollada con **Java, React y MySQL**, priorizando escalabilidad y usabilidad.",
     technologies: ["Java", "React", "MySQL"],

@@ -2,7 +2,7 @@ import { ExternalLink } from "lucide-react";
 
 export function Writing() {
   return (
-    <section id="certifications" className="mb-24">
+    <section id="certifications" className="mt-28">
       <h2 className="section-title">Certificaciones oficiales</h2>
 
       <div className="mt-6">

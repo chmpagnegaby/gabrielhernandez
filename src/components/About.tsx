@@ -2,6 +2,8 @@ export function About() {
   return (
     <section id="about" className="mb-24">
       <div className="prose prose-lg max-w-none">
+       <h2 className="section-title">Sobre mi</h2>
+
         <p className="text-muted-foreground leading-relaxed mb-6">
           Soy un joven desarrollador muy ilusionado por seguir aprendiendo y 
           creciendo en el mundo del software. Me apasiona construir interfaces 
