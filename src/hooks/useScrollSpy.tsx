@@ -1,42 +1,50 @@
+// src/hooks/useScrollSpy.ts
 import { useEffect, useState } from "react";
 
-export function useScrollSpy(sectionIds: string[], offset: number = 100) {
-  const [activeSection, setActiveSection] = useState<string>("");
+type Options = {
+  /** Pixeles a sumar al scroll para decidir la sección activa (compensa headers/sticky paddings) */
+  offset?: number;
+  /** Fracción de la altura de viewport que adelantamos (0..1). Por defecto 0.25 */
+  viewportAhead?: number;
+};
+
+export function useScrollSpy(ids: string[], opts: Options = {}) {
+  const { offset = 96, viewportAhead = 0.25 } = opts;
+  const [activeId, setActiveId] = useState<string>(ids[0] ?? "");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + offset;
+    const onScroll = () => {
+      const y = window.scrollY + offset + window.innerHeight * viewportAhead;
+      const doc = document.documentElement;
+      const atBottom =
+        window.scrollY + window.innerHeight >= (doc.scrollHeight - 2);
 
-      // Find the current section
-      let currentSection = "";
-      
-      for (const sectionId of sectionIds) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const elementTop = element.offsetTop;
-          const elementHeight = element.offsetHeight;
-          
-          if (scrollPosition >= elementTop && scrollPosition < elementTop + elementHeight) {
-            currentSection = sectionId;
-            break;
-          }
-        }
+      // Si estás al fondo, activa la última sección renderizada
+      if (atBottom) {
+        setActiveId(ids[ids.length - 1] ?? "");
+        return;
       }
 
-      // If we're at the top, default to the first section
-      if (scrollPosition < 200) {
-        currentSection = sectionIds[0];
+      let current = ids[0] ?? "";
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if (top <= y) current = id;
+        else break; // ids deben ir en el mismo orden vertical que en la página
       }
-
-      setActiveSection(currentSection);
+      setActiveId(current);
     };
 
-    // Initial check
-    handleScroll();
+    onScroll(); // inicial
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ids.join(","), offset, viewportAhead]);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [sectionIds, offset]);
-
-  return activeSection;
+  return activeId;
 }
