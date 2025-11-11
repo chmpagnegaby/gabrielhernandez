@@ -1,35 +1,35 @@
 const educationPast = [
   {
-    period: "2016 — 2020",
-    title: "Educación Secundaria Obligatoria (ESO)",
+    period: "2018 — 2022",
+    title: "Educación nivel Bachillerato",
     place: "IES Maestro Juan Calero, Monesterio",
     description:
       "Bases académicas y competencias generales; punto de partida para la rama tecnológica.",
   },
   {
-    period: "2020 — 2021",
+    period: "2022 — 2023",
     title: "Mantenimiento Electrónico (1º año)",
     place: "IES Heliópolis, Sevilla",
     description:
       "Fundamentos de sistemas eléctricos/electrónicos y resolución técnica de problemas.",
   },
   {
-    period: "2021 — 2023",
+    period: "2023 — 2025",
     title: "Desarrollo de Aplicaciones Web (DAW)",
     place: "FESAC – SS.CC. San José, Sevilla",
     description:
       "Formación integral en frontend, backend y BBDD (HTML/CSS/JS, PHP, SQL). Enfoque práctico y orientado a producto.",
-  },
-];
-
-const educationFuture = [
-  {
+  },  {
     period: "2025 — 2026",
     title: "Curso de Especialización en Ciberseguridad",
     place: "Digitech (Remoto)",
     description:
       "Hardening, detección de vulnerabilidades, gestión de identidades, protección de datos y respuesta ante incidentes.",
-  },
+  }
+];
+
+const educationFuture = [
+
   {
     period: "2026 — 2027",
     title: "Curso de Especialización en IA y Big Data",

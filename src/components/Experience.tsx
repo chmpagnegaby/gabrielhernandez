@@ -29,7 +29,7 @@ const experiences = [
     technologies: ["Astro", "React", "Node.js", "PostgreSQL", "SEO"],
   },
   {
-    period: "2024 — 2025",
+    period: "2024 — Actualidad",
     title: "Software Developer",
     company: "Nutrieco",
     companyUrl: "https://nutrieco.es/",
